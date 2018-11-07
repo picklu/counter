@@ -1,5 +1,6 @@
 const btnUp = document.getElementById("up");
 const btnDown = document.getElementById("down");
+const btnReset = document.getElementById("reset");
 const inputValue = document.getElementById("value");
 const minValue = 0;
 const maxValue = 1000;
@@ -25,4 +26,8 @@ btnUp.onclick = () => {
 
 btnDown.onclick = () => {
     updateValue("down");
+};
+
+btnReset.onclick = () => {
+    inputValue.value = 0;
 };
