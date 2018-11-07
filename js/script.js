@@ -20,13 +20,19 @@ const updateValue = how => {
     inputValue.value = value;
 };
 
-btnUp.onclick = () => {
-    updateValue("up");
+document.onkeydown = e => {
+    e = e || window.event;
+
+    if (e.keyCode == "38") {
+        updateValue("up");
+    }
+    else if (e.keyCode == "40") {
+        updateValue("down");
+    }
 };
 
-btnDown.onclick = () => {
-    updateValue("down");
-};
+btnDown.onclick = () => updateValue("down");
+btnUp.onclick = () => updateValue("up");
 
 btnReset.onclick = () => {
     inputValue.value = 0;
