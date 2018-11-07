@@ -1,16 +1,18 @@
 const btnUp = document.getElementById("up");
 const btnDown = document.getElementById("down");
 const inputValue = document.getElementById("value");
+const minValue = 0;
+const maxValue = 1000;
 
 const updateValue = how => {
     let value = Number(inputValue.value);
     if (how === "up") {
-        if (value < 1000) {
+        if (value < maxValue) {
             ++value;
         }
     }
     else if (how === "down") {
-        if (value > 0) {
+        if (value > minValue) {
             --value;
         }
     }
