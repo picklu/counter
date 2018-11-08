@@ -4,7 +4,7 @@
     }
     
     @if $breakpoint == tablet-port {
-        @media (max-width: 56.25em) { @content};      // 900px
+        @media (max-width: 56.25em) { @content}; 
     }
 
       @if $breakpoint == tablet-land {
