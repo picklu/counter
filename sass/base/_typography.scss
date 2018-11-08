@@ -1,6 +1,14 @@
 h1 {
     text-align: center;
-    text-shadow: 0 0 5px #096063;
-    font-size: 6rem;
+    text-shadow: 0 0 5px #12989c;
+    font-size: 4rem;
     color: #096063;
+
+    @include respond(tablet-port) {
+        font-size: 3rem;
+    }
+
+    @include respond(big-desktop) {
+        font-size: 5rem;
+    }
 }
