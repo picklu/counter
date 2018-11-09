@@ -1,7 +1,7 @@
 .main {
     width: 50%;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 10rem;
 
     @include respond(tablet-port) {
         width: 80%;    
@@ -9,8 +9,9 @@
 
     @include respond(phone) {
         margin: 0;
-        margin-top: 10rem;
-        padding: 2rem;
+        margin-top: 5rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
         width: 100%;    
     }
 }
