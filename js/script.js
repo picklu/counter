@@ -1,8 +1,9 @@
+const spelled = document.getElementById("spelled");
 const btnUp = document.getElementById("up");
 const btnDown = document.getElementById("down");
 const btnReset = document.getElementById("reset");
 const inputValue = document.getElementById("value");
-const minValue = 0;
+const minValue = 1;
 const maxValue = 1000;
 const cardinalsObect = {
     "1": "one",
@@ -32,16 +33,8 @@ const cardinalsObect = {
     "70": "seventy",
     "80": "eighty",
     "90": "ninety",
-    "100": "one hundred",
-    "200": "two hundred",
-    "300": "three hundred",
-    "400": "four hundred",
-    "500": "five hundred",
-    "600": "six hundred",
-    "700": "seven hundred",
-    "800": "eight hundred",
-    "900": "nine hundred",
-    "1000": "one thousand"
+    "100": "hundred",
+    "1000": "thousand"
 };
 const cardinalsArr = Object.keys(cardinalsObect).reverse();
 
@@ -50,14 +43,17 @@ const spellTheNumber = number => {
     for (let i = 0; i < cardinalsArr.length; i++) {
         let eachNumber = cardinalsArr[i];
         let cardinalNumber = parseInt(eachNumber);
-        let remainder = number % cardinalNumber;
-        
-        if (number == cardinalNumber) {
+        if (number >= cardinalNumber) {
+            let quotient = parseInt(number / cardinalNumber);
+            let remainder = number % cardinalNumber;
+            if (cardinalNumber === 100 || cardinalNumber === 1000) {
+                spelledNumberArr.push(cardinalsObect[quotient]);
+            }
             spelledNumberArr.push(cardinalsObect[eachNumber]);
-            break;
-        }
-        else if (number > cardinalNumber) {
-            spelledNumberArr.push(cardinalsObect[eachNumber]);
+            
+            if (!remainder) {
+                break; 
+            }
             number = remainder;             
         }
     }
@@ -77,6 +73,7 @@ const updateValue = how => {
         }
     }
     inputValue.value = value;
+    spelled.innerText = spellTheNumber(value);
 };
 
 document.onkeydown = e => {
@@ -94,5 +91,5 @@ btnDown.onclick = () => updateValue("down");
 btnUp.onclick = () => updateValue("up");
 
 btnReset.onclick = () => {
-    inputValue.value = 0;
+    inputValue.value = minValue;
 };
