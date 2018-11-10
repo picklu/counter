@@ -3,9 +3,10 @@ const btnUp = document.getElementById("up");
 const btnDown = document.getElementById("down");
 const btnReset = document.getElementById("reset");
 const inputValue = document.getElementById("value");
-const minValue = 1;
+const minValue = 0;
 const maxValue = 1000;
 const cardinalsObect = {
+    "0": "zero",
     "1": "one",
     "2": "two",
     "3": "three",
@@ -65,7 +66,7 @@ const spellTheNumber = number => {
             number = remainder;             
         }
     }
-    return spelledNumberArr.join(" ").toUpperCase();
+    return spelledNumberArr.join(" ");
 };
 
 const updateValue = how => {
@@ -80,9 +81,13 @@ const updateValue = how => {
             --value;
         }
     }
-    inputValue.value = value;
+    else if (how === "reset") {
+        value = minValue;        
+    }
+
     const spelledNumber = spellTheNumber(value);
     spelled.innerText = spelledNumber;
+    inputValue.value = value;
     speakOutLoud(spelledNumber);
 };
 
@@ -99,15 +104,9 @@ document.onkeydown = e => {
 
 btnDown.onclick = () => updateValue("down");
 btnUp.onclick = () => updateValue("up");
-
-btnReset.onclick = () => {
-    const spelledNumber = spellTheNumber(minValue);
-
-    inputValue.value = minValue;
-    spelled.innerText = spellTheNumber(minValue);
-    speakOutLoud(spelledNumber);
-};
+btnReset.onclick = () => { updateValue("reset")};
+spelled.onclick = () => { speakOutLoud( spelled.innerText )};
 
 // default value
-spelled.innerText = spellTheNumber(minValue);
 speakOutLoud("Hello, Ritul. Welcom to number counter.");
+ 
