@@ -92,4 +92,9 @@ btnUp.onclick = () => updateValue("up");
 
 btnReset.onclick = () => {
     inputValue.value = minValue;
+    spelled.innerText = spellTheNumber(minValue);
 };
+
+// default value
+spelled.innerText = spellTheNumber(minValue);
+
