@@ -105,6 +105,7 @@ btnDown.onclick = () => updateValue("down");
 btnUp.onclick = () => updateValue("up");
 btnReset.onclick = () => { updateValue("reset")};
 spelled.onclick = () => { speakOutLoud( spelled.innerText )};
+spelled.ontouchstart = () => { speakOutLoud( spelled.innerText )};
 
 // default value
 speakOutLoud("Hello, Ritul. Welcom to number counter.");
