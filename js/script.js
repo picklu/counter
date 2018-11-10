@@ -37,6 +37,7 @@ const cardinalsObect = {
     "1000": "thousand"
 };
 const cardinalsArr = Object.keys(cardinalsObect).reverse();
+var msg = new SpeechSynthesisUtterance("Hello, Ritul. Welcome to number counter. Start counting number from one.");
 
 const spellTheNumber = number => {
     let spelledNumberArr = [];
@@ -73,7 +74,10 @@ const updateValue = how => {
         }
     }
     inputValue.value = value;
-    spelled.innerText = spellTheNumber(value);
+    const spelledNumber = spellTheNumber(value);
+    spelled.innerText = spelledNumber;
+    msg = new SpeechSynthesisUtterance(spelledNumber);
+    window.speechSynthesis.speak(msg);
 };
 
 document.onkeydown = e => {
@@ -93,8 +97,12 @@ btnUp.onclick = () => updateValue("up");
 btnReset.onclick = () => {
     inputValue.value = minValue;
     spelled.innerText = spellTheNumber(minValue);
+    const spelledNumber = spellTheNumber(minValue);
+    msg = new SpeechSynthesisUtterance(spelledNumber);
+    window.speechSynthesis.speak(msg);
 };
 
 // default value
 spelled.innerText = spellTheNumber(minValue);
+window.speechSynthesis.speak(msg);
 
