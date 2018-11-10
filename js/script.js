@@ -4,7 +4,7 @@ const btnReset = document.getElementById("reset");
 const inputValue = document.getElementById("value");
 const minValue = 0;
 const maxValue = 1000;
-const cardinals = {
+const cardinalsObect = {
     "1": "one",
     "2": "two",
     "3": "three",
@@ -43,7 +43,7 @@ const cardinals = {
     "900": "nine hundred",
     "1000": "one thousand"
 };
-const cardinalsArr = Object.keys(cardinals).reverse();
+const cardinalsArr = Object.keys(cardinalsObect).reverse();
 
 const spellTheNumber = number => {
     let spelledNumberArr = [];
@@ -53,11 +53,11 @@ const spellTheNumber = number => {
         let remainder = number % cardinalNumber;
         
         if (number == cardinalNumber) {
-            spelledNumberArr.push(cardinals[eachNumber]);
+            spelledNumberArr.push(cardinalsObect[eachNumber]);
             break;
         }
         else if (number > cardinalNumber) {
-            spelledNumberArr.push(cardinals[eachNumber]);
+            spelledNumberArr.push(cardinalsObect[eachNumber]);
             number = remainder;             
         }
     }
