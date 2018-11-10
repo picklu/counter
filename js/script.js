@@ -88,7 +88,6 @@ const updateValue = how => {
     const spelledNumber = spellTheNumber(value);
     spelled.innerText = spelledNumber;
     inputValue.value = value;
-    speakOutLoud(spelledNumber);
 };
 
 document.onkeydown = e => {
