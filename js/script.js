@@ -38,7 +38,7 @@ const cardinalsObect = {
 };
 const cardinalsArr = Object.keys(cardinalsObect).reverse();
 
-const speechSynthesize = function(msg) {
+const speakOutLoud = function(msg) {
     let utterance = new SpeechSynthesisUtterance(msg);
     if (speechSynthesis.speaking) {
         speechSynthesis.cancel();
@@ -83,7 +83,7 @@ const updateValue = how => {
     inputValue.value = value;
     const spelledNumber = spellTheNumber(value);
     spelled.innerText = spelledNumber;
-    speechSynthesize(spelledNumber);
+    speakOutLoud(spelledNumber);
 };
 
 document.onkeydown = e => {
@@ -105,9 +105,9 @@ btnReset.onclick = () => {
 
     inputValue.value = minValue;
     spelled.innerText = spellTheNumber(minValue);
-    speechSynthesize(spelledNumber);
+    speakOutLoud(spelledNumber);
 };
 
 // default value
 spelled.innerText = spellTheNumber(minValue);
-speechSynthesize("Hello, Ritul. Welcom to number counter.");
+speakOutLoud("Hello, Ritul. Welcom to number counter.");
