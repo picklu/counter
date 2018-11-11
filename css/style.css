@@ -42,16 +42,14 @@ body {
 .main {
   min-height: 80vh;
   width: 50%;
-  margin: auto;
-  margin-top: 10rem; }
+  margin: 10rem auto; }
   @media (max-width: 56.25em) {
     .main {
-      margin: 0;
       margin-top: 5rem;
       width: 80%; } }
   @media (max-width: 37.5em) {
     .main {
-      margin-top: 3rem;
+      margin: 3rem 0 0 0;
       padding-left: 2rem;
       padding-right: 2rem;
       width: 100%; } }
@@ -67,17 +65,19 @@ body {
 .speaker {
   display: none; }
 
-.speaker-label::before {
-  border-radius: 50px;
-  content: "\1F507";
-  cursor: pointer;
-  font-size: 2.5rem; }
-  .speaker:checked + .speaker-label::before {
-    content: "\1F509"; }
-
-.speaker-label:hover::before {
-  background-color: #12989c;
-  box-shadow: 0 0 20px #096063; }
+.speaker-label {
+  position: absolute;
+  top: 10px; }
+  .speaker-label::before {
+    border-radius: 50px;
+    content: "\1F507";
+    cursor: pointer;
+    font-size: 2.5rem; }
+    .speaker:checked + .speaker-label::before {
+      content: "\1F509"; }
+  .speaker-label:hover::before {
+    background-color: #12989c;
+    box-shadow: 0 0 20px #096063; }
 
 .spelled {
   cursor: pointer;

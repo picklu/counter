@@ -3,6 +3,8 @@
 }
 
 .speaker-label {
+    position: absolute;
+    top: 10px;
 
     &::before { 
         border-radius: 50px;
