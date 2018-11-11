@@ -1,3 +1,4 @@
+const speaker = document.getElementById("speaker");
 const spelled = document.getElementById("spelled");
 const btnUp = document.getElementById("up");
 const btnDown = document.getElementById("down");
@@ -40,12 +41,16 @@ const cardinalsObect = {
 const cardinalsArr = Object.keys(cardinalsObect).reverse();
 
 const speakOutLoud = function(msg) {
+    // if the speaker is muted then exit
+    if (!speaker.checked) return;
+
+    // else continue
     let utterance = new SpeechSynthesisUtterance(msg);
     if (speechSynthesis.speaking) {
         speechSynthesis.cancel();
     }
     speechSynthesis.speak(utterance);
-}
+};
 
 const spellTheNumber = number => {
     let spelledNumberArr = [];
@@ -88,6 +93,7 @@ const updateValue = how => {
     const spelledNumber = spellTheNumber(value);
     spelled.innerText = spelledNumber;
     inputValue.value = value;
+    speakOutLoud(spelledNumber);
 };
 
 document.onkeydown = e => {
