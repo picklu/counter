@@ -43,13 +43,14 @@ body {
   min-height: 80vh;
   width: 50%;
   margin: auto;
-  margin-top: 5rem; }
+  margin-top: 10rem; }
   @media (max-width: 56.25em) {
     .main {
+      margin: 0;
+      margin-top: 5rem;
       width: 80%; } }
   @media (max-width: 37.5em) {
     .main {
-      margin: 0;
       margin-top: 3rem;
       padding-left: 2rem;
       padding-right: 2rem;
@@ -91,10 +92,6 @@ body {
   @media (min-width: 112.5em) {
     .spelled {
       font-size: 5rem; } }
-  .speaker:checked ~ .spelled::before {
-    content: "\1F509";
-    font-size: inherit;
-    padding-right: 5px; }
   .speaker:checked ~ .spelled:hover::before {
     content: "\1F50A";
     font-size: inherit;

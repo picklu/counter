@@ -37,12 +37,6 @@
         font-size: 5rem;
     }
 
-    .speaker:checked ~ &::before {
-        content: "\1F509";
-        font-size: inherit;
-        padding-right: 5px;
-    }
-
     .speaker:checked ~ &:hover::before {
         content: "\1F50A";
         font-size: inherit;
