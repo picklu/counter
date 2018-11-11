@@ -1,0 +1,23 @@
+.btn {
+    background-color: #096063;
+    border: none;
+    box-shadow: 0 0 10px #676969;
+    color: #fff;
+    font-size: inherit;
+    padding: 5px;
+    text-transform: uppercase;
+    transition: transform .2s;
+
+    &:active {
+        transform: scale(1.005);
+    }
+
+    &:focus,
+    &:active {
+        outline: none;
+    }
+
+    &:hover {
+        box-shadow: 0 0 10px #20dce2;
+    }
+}

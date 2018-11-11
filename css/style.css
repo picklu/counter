@@ -20,7 +20,7 @@ html {
 body {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #f5ff5f;
+  background-color: #dfdfdf;
   font-size: 10px; }
 
 .spelled {
@@ -44,6 +44,22 @@ body {
     content: "\1F509";
     font-size: inherit;
     padding-right: 5px; }
+
+.btn {
+  background-color: #096063;
+  border: none;
+  box-shadow: 0 0 10px #676969;
+  color: #fff;
+  font-size: inherit;
+  padding: 5px;
+  text-transform: uppercase;
+  transition: transform .2s; }
+  .btn:active {
+    transform: scale(1.005); }
+  .btn:focus, .btn:active {
+    outline: none; }
+  .btn:hover {
+    box-shadow: 0 0 10px #20dce2; }
 
 .main {
   width: 50%;
@@ -77,21 +93,6 @@ body {
     display: block;
     text-align: center;
     margin-bottom: 1rem; }
-  .number .btn {
-    background-color: #096063;
-    border: none;
-    box-shadow: 0 0 20px #676969;
-    color: #fff;
-    font-size: inherit;
-    padding: 5px;
-    text-transform: uppercase;
-    transition: transform .2s; }
-    .number .btn:active {
-      transform: scale(1.005); }
-    .number .btn:focus, .number .btn:active {
-      outline: none; }
-    .number .btn:hover {
-      box-shadow: 0 0 20px #20dce2; }
   .number__value {
     color: #096063;
     font-size: 4rem; }
@@ -102,7 +103,6 @@ body {
       .number__value {
         font-size: 5rem; } }
   .number__reset.btn {
-    background-color: rgba(197, 56, 13, 0.836);
-    box-shadow: 0 0 20px #e06e11; }
+    background-color: rgba(197, 56, 13, 0.836); }
     .number__reset.btn:hover {
-      box-shadow: 0 0 20px #e01111; }
+      box-shadow: 0 0 10px #e01111; }
