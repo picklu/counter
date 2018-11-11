@@ -40,15 +40,19 @@ const cardinalsObect = {
 };
 const cardinalsArr = Object.keys(cardinalsObect).reverse();
 
+const clearSpeechSynthesis = function() {
+    if (speechSynthesis.speak) {
+        speechSynthesis.cancel();
+    }
+};
+
 const speakOutLoud = function(msg) {
     // if the speaker is muted then exit
     if (!speaker.checked) return;
 
     // else continue
+    clearSpeechSynthesis();
     let utterance = new SpeechSynthesisUtterance(msg);
-    if (speechSynthesis.speaking) {
-        speechSynthesis.cancel();
-    }
     speechSynthesis.speak(utterance);
 };
 
@@ -109,9 +113,10 @@ document.onkeydown = e => {
 
 btnDown.onclick = () => updateValue("down");
 btnUp.onclick = () => updateValue("up");
-btnReset.onclick = () => { updateValue("reset")};
-spelled.onclick = () => { speakOutLoud( spelled.innerText )};
-spelled.ontouchstart = () => { speakOutLoud( spelled.innerText )};
+btnReset.onclick = () => { updateValue("reset"); };
+spelled.onclick = () => { speakOutLoud(spelled.innerText); };
+spelled.ontouchstart = () => { speakOutLoud(spelled.innerText); };
+speaker.onclick = () => { clearSpeechSynthesis(); };
 
 // default value
 speakOutLoud("Hello, Ritul. Welcom to number counter.");
