@@ -63,6 +63,21 @@ body {
   padding: 2rem;
   text-align: center; }
 
+.speaker {
+  display: none; }
+
+.speaker-label::before {
+  border-radius: 50px;
+  content: "\1F507";
+  cursor: pointer;
+  font-size: 2.5rem; }
+  .speaker:checked + .speaker-label::before {
+    content: "\1F509"; }
+
+.speaker-label:hover::before {
+  background-color: #12989c;
+  box-shadow: 0 0 20px #096063; }
+
 .spelled {
   cursor: pointer;
   text-align: center;
@@ -76,12 +91,12 @@ body {
   @media (min-width: 112.5em) {
     .spelled {
       font-size: 5rem; } }
-  .spelled::before {
-    content: "\1F508";
+  .speaker:checked ~ .spelled::before {
+    content: "\1F509";
     font-size: inherit;
     padding-right: 5px; }
-  .spelled:hover::before {
-    content: "\1F509";
+  .speaker:checked ~ .spelled:hover::before {
+    content: "\1F50A";
     font-size: inherit;
     padding-right: 5px; }
 
