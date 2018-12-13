@@ -25,7 +25,7 @@ body {
 .btn {
   background-color: #096063;
   border: none;
-  box-shadow: 0 0 10px #676969;
+  box-shadow: 0 0 3px #676969;
   color: #fff;
   font-size: inherit;
   line-height: 2;
